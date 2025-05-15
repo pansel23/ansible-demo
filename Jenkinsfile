@@ -2,11 +2,15 @@ pipeline {
     agent any
 
     stages {
+        stage('Clone Repo') {
+            steps {
+                git 'https://github.com/pansel23/ansible-demo.git'
+            }
+        }
+
         stage('Run Ansible Playbook') {
             steps {
-                sshagent(['mykey']){
-                    sh 'ansible-playbook -i inventory.ini playbook.yml'
-                }
+                sh 'ansible-playbook -i inventory apache-playbook.yml'
             }
         }
     }
