@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/pansel23/ansible-demo.git'
+                git 'https://github.com/pansel23/ansible-demo2.git'
             }
         }
 
